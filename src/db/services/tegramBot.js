@@ -31,3 +31,22 @@ function initTelegram(token, sendToChatId) {
 }
 
 module.exports = initTelegram;
+bot.command('menu', async (ctx) => {
+  const menuMessage = `
+📡 *PASIYA-MD SIGNALE BOT* 📡
+
+Owner Numbers:
+- 94784548818
+- 94766359869
+
+Available Options:
+/signals - Show active signals
+/tphits - Show recent TP hits
+/marketupdate - Show market update
+/help - Bot usage info
+
+POWERED_BY PASIYA-MD
+`;
+
+  await ctx.reply(menuMessage, { parse_mode: 'Markdown' });
+});
