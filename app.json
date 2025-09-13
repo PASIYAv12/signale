@@ -1,0 +1,51 @@
+{
+  "name": "PASIYA-MD-BOT",
+  "description": "WhatsApp & Telegram Bot by PASIYA using Node.js",
+  "repository": "https://github.com/PASIYAv12/PASIYA-MD", 
+  "logo": "https://i.ibb.co/4J9j7Rz/bot-logo.png",
+  "keywords": [
+    "whatsapp",
+    "telegram",
+    "bot",
+    "nodejs",
+    "pasiya-md"
+  ],
+  "env": {
+    "SESSION_ID": {
+      "description": "Enter your WhatsApp Session ID",
+      "required": true
+    },
+    "TELEGRAM_BOT_TOKEN": {
+      "description": "Telegram Bot Token from @BotFather",
+      "required": true
+    },
+    "TELEGRAM_API_ID": {
+      "description": "Telegram API ID from https://my.telegram.org",
+      "required": true
+    },
+    "TELEGRAM_API_HASH": {
+      "description": "Telegram API HASH from https://my.telegram.org",
+      "required": true
+    },
+    "OWNER_NUMBER": {
+      "description": "Your WhatsApp number with country code (e.g. 94784548818)",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Telegram Owner ID",
+      "required": false
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "stack": "heroku-22",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
