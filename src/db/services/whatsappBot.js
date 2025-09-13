@@ -31,3 +31,29 @@ async function initWhatsApp(sessionPath) {
 }
 
 module.exports = initWhatsApp;
+sock.ev.on('messages.upsert', async (msgUpdate) => {
+  const msg = msgUpdate.messages[0];
+  if (!msg.key.fromMe) {
+    const text = msg.message?.conversation || '';
+    const from = msg.key.remoteJid;
+
+    if (text.toLowerCase() === '.menu') {
+      const menuText = `
+📡 PASIYA-MD SIGNALE BOT 📡
+
+Owner Numbers:
+- 94784548818
+- 94766359869
+
+Available Options:
+.signals - Show active signals
+.tphits - Show recent TP hits
+.marketupdate - Show market update
+.help - Bot usage info
+
+POWERED_BY PASIYA-MD
+      `;
+      await sock.sendMessage(from, { text: menuText });
+    }
+  }
+});
